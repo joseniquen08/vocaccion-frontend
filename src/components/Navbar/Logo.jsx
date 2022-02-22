@@ -1,12 +1,23 @@
+import { Flex, Heading } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 const Logo = () => {
     return (
-        <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link to="/">
-                <h2 className="text-3xl font-extrabold text-blue-id hover:text-blue-900">vocacción</h2>
-            </Link>
-        </div>
+        <Flex
+          justifyContent="start"
+          flex={{ lg: '1 1 0%' }}
+        >
+          <Link to="/">
+            <Heading
+              as='h2'
+              fontSize={{ base: '3xl' }}
+              fontWeight={800}
+              color="primary"
+            >
+              vocacción
+            </Heading>
+          </Link>
+        </Flex>
     );
 }
 

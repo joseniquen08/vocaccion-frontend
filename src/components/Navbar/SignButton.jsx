@@ -1,34 +1,7 @@
 import { Button, Link, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-export const SignButton = (props) => {
-
-  // const [showMenu, setShowMenu] = useState(false);
-  const [menuSign, setMenuSign] = useState(false);
-  // const handleClick = (e) => {
-  //   setShowMenu(showMenu => !showMenu);
-  // }
-
-  // const contentSign = () => {
-  //   if(menuSign === false){
-  //     setMenuSign(true)
-  //   }
-  // }
-
-  const cond = () => {
-    setMenuSign(false)
-  }
-
-  useEffect(() => {
-    if(menuSign === true){
-      window.addEventListener("click", cond)
-      return () => {
-        window.removeEventListener("click", cond)
-      }
-    }
-  })
-
+export const SignButton = () => {
   return (
     <>
       <Menu>

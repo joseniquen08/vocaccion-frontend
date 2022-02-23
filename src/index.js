@@ -1,29 +1,16 @@
-import { ChakraProvider, extendTheme, withDefaultColorScheme } from '@chakra-ui/react';
 import '@fontsource/manrope';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
-import './index.css';
-
-const theme = extendTheme(
-  {
-    fonts: {
-      heading: 'Manrope, sans-serif',
-      body: 'Manrope, sans-serif',
-    },
-    colors: {
-      primary: '#0F4C81',
-    },
-  },
-  withDefaultColorScheme({ colorScheme: 'primary' })
-);
+import './styles/index.css';
+import { ChakraProviderTheme } from './styles/theme.chakra';
 
 ReactDOM.render(
   <BrowserRouter>
-    <ChakraProvider theme={theme}>
+    <ChakraProviderTheme>
       <App />
-    </ChakraProvider>
+    </ChakraProviderTheme>
   </BrowserRouter>,
   document.getElementById('root')
 );

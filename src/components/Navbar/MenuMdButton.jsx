@@ -30,12 +30,12 @@ export const MenuMdButton = () => {
         >
           <DrawerOverlay />
           <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerBody marginTop={12}>
+            <DrawerCloseButton _focus={{ boxShadow: 'none' }}/>
+            <DrawerBody marginTop={12} padding={0}>
               <Accordion allowToggle>
                 <AccordionItem>
                   <h2>
-                    <AccordionButton>
+                    <AccordionButton _focus={{ boxShadow: 'none' }}>
                       <Box flex='1' textAlign='left'>
                         Carreras
                       </Box>
@@ -72,7 +72,7 @@ export const MenuMdButton = () => {
                 </AccordionItem>
                 <AccordionItem>
                   <h2>
-                    <AccordionButton>
+                    <AccordionButton _focus={{ boxShadow: 'none' }}>
                       <Box flex='1' textAlign='left'>
                         Universidades
                       </Box>

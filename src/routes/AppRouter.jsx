@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import Login from "../components/auth/Login";
-import Register from "../components/auth/Register";
+import { SignIn } from "../components/auth/SignIn";
+import { SignUp } from "../components/auth/SignUp";
 import ListaCarreras from "../components/carreras/ListaCarreras";
 import CrearCarrera from "../components/dashboard/CrearCarrera";
 import CrearUniversidad from "../components/dashboard/CrearUniversidad";
@@ -33,8 +33,8 @@ export const AppRouter = () => {
         <Route path="/perfil" element={<EditarPerfil/>}/>
         <Route path="/crear-carrera" element={<CrearCarrera/>}/>
         <Route path="/crear-universidad" element={<CrearUniversidad/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
+        <Route path="/login" element={<SignIn/>}/>
+        <Route path="/register" element={<SignUp/>}/>
         <Route path="*" element={<Error404/>}/>
       </Routes>
     </div>

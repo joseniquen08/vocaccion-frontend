@@ -35,6 +35,13 @@ const theme = extendTheme(
           fontWeight: 500,
         },
       },
+      Input: {
+        baseStyle: {
+          _focus: {
+            boxShadow: 'none',
+          },
+        },
+      },
     },
   },
   withDefaultColorScheme({ colorScheme: 'primary' }),

@@ -34,7 +34,7 @@ export const ListCarrersContainer = () => {
             color='cyan.600'
           >{typeCarrer}</Heading>
           <ListCarrers typeCarrer={typeCarrer}/>
-          {/* <TableCarrers catCarrera={carrer}/> */}
+          {/* <TableCarrers catCarrera={typeCarrer}/> */}
         </Box>
       </Box>
     </Flex>

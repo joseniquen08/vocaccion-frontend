@@ -27,6 +27,7 @@ export const Navbar = () => {
         top={0}
         zIndex={50}
         w="full"
+        bg='white'
       >
         <Box
           paddingX={{ base: '1rem', md: '2.5rem' }}

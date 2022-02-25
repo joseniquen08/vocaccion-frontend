@@ -1,34 +1,26 @@
 import { Route, Routes } from "react-router-dom";
 import { SignIn } from "../components/auth/SignIn";
 import { SignUp } from "../components/auth/SignUp";
-import ListaCarreras from "../components/carreras/ListaCarreras";
+import { ListCarrersContainer } from "../components/Carrer/ListCarrersContainer";
 import CrearCarrera from "../components/dashboard/CrearCarrera";
 import CrearUniversidad from "../components/dashboard/CrearUniversidad";
 import Error404 from "../components/error/Error404";
-import ListaUniversidades from "../components/universidades/ListaUniversidades";
+import { ListUniversity } from "../components/University/ListUniversity";
 import EditarPerfil from "../components/usuario/EditarPerfil";
+import { CarrersPage } from "../pages/CarrersPage";
 import { Home } from "../pages/Home";
+import { Universities } from "../pages/Universities";
 
 export const AppRouter = () => {
-
-  const listaCarreras = ['Ciencias', 'Arte', 'Arquitectura', 'Derecho', 'Ingeniería', 'Ciencias Sociales'];
-  const listaUniversidades = ['Pública', 'Privada'];
-
   return (
     <div className="font-manrope">
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/carreras">
-          <Route path="ciencias" element={<ListaCarreras nomCarrera={listaCarreras[0]}/>}/>
-          <Route path="arte" element={<ListaCarreras nomCarrera={listaCarreras[1]}/>}/>
-          <Route path="arquitectura" element={<ListaCarreras nomCarrera={listaCarreras[2]}/>}/>
-          <Route path="derecho" element={<ListaCarreras nomCarrera={listaCarreras[3]}/>}/>
-          <Route path="ingenieria" element={<ListaCarreras nomCarrera={listaCarreras[4]}/>}/>
-          <Route path="ciencias-sociales" element={<ListaCarreras nomCarrera={listaCarreras[5]}/>}/>
+        <Route path="/carreras" element={<CarrersPage/>}>
+          <Route path=":name" element={<ListCarrersContainer/>}/>
         </Route>
-        <Route path="/universidades">
-          <Route path="publicas" element={<ListaUniversidades tipoUniversidad={listaUniversidades[0]}/>}/>
-          <Route path="privadas" element={<ListaUniversidades tipoUniversidad={listaUniversidades[1]}/>}/>
+        <Route path="/universidades" element={<Universities/>}>
+          <Route path=":name" element={<ListUniversity/>}/>
         </Route>
         <Route path="/perfil" element={<EditarPerfil/>}/>
         <Route path="/crear-carrera" element={<CrearCarrera/>}/>

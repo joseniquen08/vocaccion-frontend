@@ -36,7 +36,7 @@ export const MenuMdButton = () => {
                 <AccordionItem>
                   <h2>
                     <AccordionButton _focus={{ boxShadow: 'none' }}>
-                      <Box flex='1' textAlign='left'>
+                      <Box flex='1' textAlign='left' fontWeight={500}>
                         Carreras
                       </Box>
                       <AccordionIcon />
@@ -50,22 +50,22 @@ export const MenuMdButton = () => {
                     spacing={4}
                     paddingY={4}
                   >
-                    <Link as={RouterLink} w='full' to="/carreras/ciencias">
+                    <Link as={RouterLink} fontWeight={400} w='full' to="/carreras/ciencias">
                       Ciencias
                     </Link>
-                    <Link as={RouterLink} w='full' to="/carreras/arte">
+                    <Link as={RouterLink} fontWeight={400} w='full' to="/carreras/arte">
                       Arte
                     </Link>
-                    <Link as={RouterLink} w='full' to="/carreras/arquitectura">
+                    <Link as={RouterLink} fontWeight={400} w='full' to="/carreras/arquitectura">
                       Arquitectura
                     </Link>
-                    <Link as={RouterLink} w='full' to="/carreras/derecho">
+                    <Link as={RouterLink} fontWeight={400} w='full' to="/carreras/derecho">
                       Derecho
                     </Link>
-                    <Link as={RouterLink} w='full' to="/carreras/ingenieria">
+                    <Link as={RouterLink} fontWeight={400} w='full' to="/carreras/ingenieria">
                       Ingeniería
                     </Link>
-                    <Link as={RouterLink} w='full' to="/carreras/ciencias-sociales">
+                    <Link as={RouterLink} fontWeight={400} w='full' to="/carreras/ciencias-sociales">
                       Ciencias Sociales
                     </Link>
                   </VStack>
@@ -73,7 +73,7 @@ export const MenuMdButton = () => {
                 <AccordionItem>
                   <h2>
                     <AccordionButton _focus={{ boxShadow: 'none' }}>
-                      <Box flex='1' textAlign='left'>
+                      <Box flex='1' textAlign='left' fontWeight={500}>
                         Universidades
                       </Box>
                       <AccordionIcon />
@@ -87,10 +87,10 @@ export const MenuMdButton = () => {
                     spacing={4}
                     paddingY={4}
                   >
-                    <Link as={RouterLink} w='full' to="/universidades/publicas">
+                    <Link as={RouterLink} fontWeight={400} w='full' to="/universidades/publicas">
                       Públicas
                     </Link>
-                    <Link as={RouterLink} w='full' to="/universidades/privadas">
+                    <Link as={RouterLink} fontWeight={400} w='full' to="/universidades/privadas">
                       Privadas
                     </Link>
                   </VStack>

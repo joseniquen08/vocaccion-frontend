@@ -11,7 +11,7 @@ const Logo = () => {
             <Heading
               as='h2'
               fontSize={{ base: '3xl' }}
-              fontWeight={700}
+              fontWeight={600}
               color='cyan.600'
             >
               vocacción

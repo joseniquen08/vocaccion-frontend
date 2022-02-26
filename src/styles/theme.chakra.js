@@ -1,10 +1,9 @@
-import { ChakraProvider, extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
+import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
 
-const theme = extendTheme(
-  {
+export const theme = extendTheme({
     fonts: {
-      heading: 'Manrope, sans-serif',
-      body: 'Manrope, sans-serif',
+      heading: 'Inter, sans-serif',
+      body: 'Inter, sans-serif',
     },
     colors: {
       primary: '#0F4C81',
@@ -44,13 +43,5 @@ const theme = extendTheme(
       },
     },
   },
-  withDefaultColorScheme({ colorScheme: 'primary' }),
+  withDefaultColorScheme({ colorScheme: 'primary' })
 );
-
-export const ChakraProviderTheme = ({ children }) => {
-  return (
-    <ChakraProvider theme={theme}>
-      {children}
-    </ChakraProvider>
-  )
-}

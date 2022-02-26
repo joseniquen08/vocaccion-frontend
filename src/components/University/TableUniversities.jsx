@@ -1,43 +1,41 @@
-import { collection, getDocs } from "firebase/firestore";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { SearchIcon } from "@chakra-ui/icons";
+import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { useEffect, useMemo, useState } from "react";
 import { db } from "../../config/firebase.config";
-import Search from "../Search";
 
-export const TableUniversities = ({ tipoUniversidad }) => {
+export const TableUniversities = ({ typeUniversity }) => {
 
-  const [allUniv, setAllUniv] = useState([]);
+  const [isLoad, setIsLoad] = useState(false);
+  const [universities, setUniversities] = useState([]);
   const [search, setSearch] = useState('');
-  const searchInput = useRef(null);
 
-  tipoUniversidad = tipoUniversidad.split('').filter((letter, i) => i !== tipoUniversidad.length - 1).join('');
+  typeUniversity = typeUniversity.split('').filter((letter, i) => i !== typeUniversity.length - 1).join('');
 
   useEffect(() => {
-    const getUniversidades = async () => {
-      const { docs } = await getDocs(collection(db, 'totalUniversidades'));
-      const totalUniversidades = docs.map( universidad => ({id: universidad.id, ...universidad.data()}));
-      setAllUniv(totalUniversidades);
-      console.log(totalUniversidades);
+    const getUniversities = async () => {
+      const { docs } = await getDocs(query(collection(db, 'totalUniversidades'), where('tipo', '==', typeUniversity)));
+      const data = docs.map(university => ({id: university.id, ...university.data()}));
+      setUniversities(data);
+      setIsLoad(true);
     }
-    getUniversidades();
-  }, []);
+    getUniversities();
+  }, [typeUniversity]);
 
-  const handleSearch = useCallback(() => {
-      setSearch(searchInput.current.value);
-  }, []);
-
-  const removeAccents = (str) => {
-      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
   }
 
-  const filteredUsers = useMemo(() =>
-      allUniv.filter((user) => {
-          return removeAccents(user.nombre.toLowerCase()).includes(removeAccents(search.toLowerCase()));
-      }),
-      [allUniv, search]
-  );
+  const removeAccents = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
 
-  const mostrarUniversidad = filteredUsers.map((universidad) =>
-    universidad.tipo === tipoUniversidad ? (
+  const filteredUniversities = useMemo(() => {
+    return universities.filter(({ nombre }) => removeAccents(nombre.toLowerCase()).includes(removeAccents(search.toLowerCase())))
+  }, [universities, search]);
+
+  const mostrarUniversidad = filteredUniversities.map((universidad) =>
+    universidad.tipo === typeUniversity ? (
       <tr key={universidad.id}>
         <td className="px-6 py-4 whitespace-nowrap">
           <div className="flex items-center">
@@ -89,7 +87,24 @@ export const TableUniversities = ({ tipoUniversidad }) => {
 
   return (
     <>
-      <Search search={search} searchInput={searchInput} handleSearch={handleSearch} />
+      <InputGroup marginY='1rem' maxW='md' marginX='auto'>
+        <InputLeftElement
+          pointerEvents='none'
+          children={<SearchIcon color='gray.300'/>}
+        />
+        <Input
+          type='text'
+          _focus={{
+            boxShadow: 'none',
+          }}
+          borderRadius='lg'
+          fontSize='sm'
+          placeholder='Buscar...'
+          value={search}
+          onChange={handleSearch}
+          autoComplete='off'
+        />
+      </InputGroup>
       <div className="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
           <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">

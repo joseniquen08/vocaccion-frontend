@@ -12,7 +12,7 @@ export const SignButton = () => {
         colorScheme='cyan'
         size='md'
         variant='outline'
-        fontWeight={{ base: 500, md: 600 }}
+        fontWeight={500}
         whileTap={{ scale: 0.92 }}
       >
         Ingresar

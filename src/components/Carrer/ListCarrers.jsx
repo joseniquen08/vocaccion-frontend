@@ -4,23 +4,26 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useMemo, useState } from "react";
 import { db } from "../../config/firebase.config";
 import { CardCarrer } from "./CardCarrer";
+import { CarrerSkeleton } from "./CarrerSkeleton";
 
 export const ListCarrers = ({ typeCarrer }) => {
 
+  const [isLoad, setIsLoad] = useState(false);
   const [carrers, setCarrers] = useState([]);
   const [search, setSearch] = useState('');
 
   useEffect(() => {
     const getCarrers = async() => {
       const { docs } = await getDocs(query(collection(db, 'totalCarreras'), where('divCarrera', '==', typeCarrer)));
-      const data = docs.map( carrera => ({id: carrera.id, ...carrera.data()}));
+      const data = docs.map(carrer => ({id: carrer.id, ...carrer.data()}));
       setCarrers(data);
+      setIsLoad(true);
     }
     getCarrers();
   }, [typeCarrer]);
 
   const handleSearch = (event) => {
-    setSearch(event.target.value)
+    setSearch(event.target.value);
   }
 
   const removeAccents = (str) => {
@@ -51,14 +54,26 @@ export const ListCarrers = ({ typeCarrer }) => {
           autoComplete='off'
         />
       </InputGroup>
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacingX='1rem' spacingY='1.3rem'>
+      <SimpleGrid
+        columns={{ base: 1, md: 2, lg: 3 }}
+        spacingX='1.2rem'
+        spacingY='1.3rem'
+        paddingY='1.5rem'
+        paddingX='1rem'
+      >
         {
-          filteredCarrers.length > 0 ? (
-            filteredCarrers.map(carrer => (
-              <CardCarrer key={carrer.id} carrer={carrer}/>
-            ))
+          isLoad ? (
+            filteredCarrers.length > 0 ? (
+              filteredCarrers.map(carrer => (
+                <CardCarrer key={carrer.id} carrer={carrer}/>
+              ))
+            ) : (
+              <Text textAlign='center'>No se han encontrado resultados</Text>
+            )
           ) : (
-            <Text textAlign='center'>No se han encontrado resultados</Text>
+            [0,1,2,3,4,5].map(index => (
+              <CarrerSkeleton key={index}/>
+            ))
           )
         }
       </SimpleGrid>

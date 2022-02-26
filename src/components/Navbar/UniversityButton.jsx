@@ -8,12 +8,12 @@ export const UniversityButton = () => {
         as={Button}
         variant='ghost'
         colorScheme='gray'
-        color='gray.600'
+        color='gray.700'
         fontWeight="500"
       >
         Universidades
       </MenuButton>
-      <MenuList>
+      <MenuList color='gray.600'>
         <MenuItem as={RouterLink} to="/universidades/publicas">
           Públicas
         </MenuItem>

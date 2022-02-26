@@ -8,12 +8,12 @@ export const CarrerButton = () => {
         as={Button}
         variant='ghost'
         colorScheme='gray'
-        color='gray.600'
-        fontWeight="500"
+        color='gray.700'
+        fontWeight={500}
       >
         Carreras
       </MenuButton>
-      <MenuList>
+      <MenuList color='gray.600'>
         <MenuItem as={RouterLink} to="/carreras/ciencias">
           Ciencias
         </MenuItem>

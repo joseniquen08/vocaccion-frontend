@@ -48,7 +48,7 @@ export const Navbar = () => {
               >
                 <CarrerButton/>
                 <UniversityButton/>
-                <Button variant="ghost" colorScheme='gray' color='gray.600' fontWeight="500">Ayuda</Button>
+                <Button variant="ghost" colorScheme='gray' color='gray.700' fontWeight="500">Ayuda</Button>
               </HStack>
               {
                 user ? (

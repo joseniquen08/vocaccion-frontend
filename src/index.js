@@ -1,16 +1,17 @@
-import '@fontsource/manrope';
+import { ChakraProvider } from '@chakra-ui/react';
+import '@fontsource/inter';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
 import './styles/index.css';
-import { ChakraProviderTheme } from './styles/theme.chakra';
+import { theme } from './styles/theme.chakra';
 
 ReactDOM.render(
   <BrowserRouter>
-    <ChakraProviderTheme>
+    <ChakraProvider theme={theme}>
       <App />
-    </ChakraProviderTheme>
+    </ChakraProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );

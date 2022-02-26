@@ -1,14 +1,14 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import { ListCarrers } from "./ListCarrers";
+import { TableUniversities } from "./TableUniversities";
 
-export const ListCarrersContainer = () => {
+export const ListUniversityContainer = () => {
 
   const { name } = useParams();
 
-  let typeCarrer = name.split('-').map(word => word.split('').map((letter, i) => i === 0 ? letter.toUpperCase() : letter).join('')).join(' ');
+  let typeUniversity = name.split('-').map(word => word.split('').map((letter, i) => i === 0 ? letter.toUpperCase() : letter).join('')).join(' ');
 
-  if (typeCarrer === 'Ingenieria') typeCarrer = 'Ingeniería';
+  if (typeUniversity === 'Publicas') typeUniversity = 'Públicas';
 
   return (
     <Flex
@@ -34,9 +34,9 @@ export const ListCarrersContainer = () => {
             color='cyan.600'
             fontWeight={600}
           >
-            {typeCarrer}
+            {typeUniversity}
           </Heading>
-          <ListCarrers typeCarrer={typeCarrer}/>
+          <TableUniversities typeUniversity={typeUniversity}/>
         </Box>
       </Box>
     </Flex>

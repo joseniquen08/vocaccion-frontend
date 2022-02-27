@@ -1,6 +1,6 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import { ListCarrers } from "./ListCarrers";
+import { ListCarrers } from "./ListCareers";
 
 export const ListCarrersContainer = () => {
 

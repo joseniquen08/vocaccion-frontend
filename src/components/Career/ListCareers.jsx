@@ -3,8 +3,8 @@ import { Input, InputGroup, InputLeftElement, SimpleGrid, Text } from "@chakra-u
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useMemo, useState } from "react";
 import { db } from "../../config/firebase.config";
-import { CardCarrer } from "./CardCarrer";
-import { CarrerSkeleton } from "./CarrerSkeleton";
+import { CardCarrer } from "./CardCareer";
+import { CarrerSkeleton } from "./CareerSkeleton";
 
 export const ListCarrers = ({ typeCarrer }) => {
 

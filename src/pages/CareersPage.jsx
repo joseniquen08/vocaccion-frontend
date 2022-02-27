@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Outlet, useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 
-export const CarrersPage = () => {
+export const CareersPage = () => {
 
   const { name } = useParams();
   const navigate = useNavigate();

@@ -61,7 +61,7 @@ export const ListUniversities = ({ typeUniversity }) => {
         spacingX='1.8rem'
         spacingY='1.6rem'
         paddingY='1.5rem'
-        paddingX='1rem'
+        paddingX='1.75rem'
       >
         {
           isLoad ? (
@@ -73,7 +73,7 @@ export const ListUniversities = ({ typeUniversity }) => {
               <Text textAlign='center'>No se han encontrado resultados</Text>
             )
           ) : (
-            [0,1,2,3,4,5].map(index => (
+            [0,1,2,3].map(index => (
               <UniversitySkeleton key={index}/>
             ))
           )

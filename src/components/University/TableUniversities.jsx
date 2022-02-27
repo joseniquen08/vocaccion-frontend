@@ -106,30 +106,30 @@ export const TableUniversities = ({ typeUniversity }) => {
         />
       </InputGroup>
       <div className="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
-          <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                  <tr>
-                      <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                          Nombre
-                      </th>
-                      <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                          Región
-                      </th>
-                      <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                          Provincia
-                      </th>
-                      <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
-                          Licenciada
-                      </th>
-                      <th scope="col" className="px-6 py-3">
-                          <span className="sr-only">Carreras</span>
-                      </th>
-                  </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                  {mostrarUniversidad}
-              </tbody>
-          </table>
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                Nombre
+              </th>
+              <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                Región
+              </th>
+              <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                Provincia
+              </th>
+              <th scope="col" className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
+                Licenciada
+              </th>
+              <th scope="col" className="px-6 py-3">
+                <span className="sr-only">Carreras</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {mostrarUniversidad}
+          </tbody>
+        </table>
       </div>
     </>
   )

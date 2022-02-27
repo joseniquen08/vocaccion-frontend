@@ -1,6 +1,6 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import { TableUniversities } from "./TableUniversities";
+import { ListUniversities } from "./ListUniversities";
 
 export const ListUniversityContainer = () => {
 
@@ -36,7 +36,7 @@ export const ListUniversityContainer = () => {
           >
             {typeUniversity}
           </Heading>
-          <TableUniversities typeUniversity={typeUniversity}/>
+          <ListUniversities typeUniversity={typeUniversity}/>
         </Box>
       </Box>
     </Flex>

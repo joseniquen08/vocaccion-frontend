@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { ThemeProvider } from '@chakra-ui/react';
 import '@fontsource/inter';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -9,9 +9,9 @@ import { theme } from './styles/theme.chakra';
 
 ReactDOM.render(
   <BrowserRouter>
-    <ChakraProvider theme={theme}>
+    <ThemeProvider theme={theme}>
       <App />
-    </ChakraProvider>
+    </ThemeProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );

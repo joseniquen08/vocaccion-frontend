@@ -31,8 +31,8 @@ export const CardCarrer = ({ carrer }) => {
           overflow='hidden'
           w='full'
         >
-          <Image src={carrer.img} flex='none' objectFit='contain' w='2.2rem' h='2.5rem' marginRight='0.1rem'/>
-          <VStack alignItems='left' flexShrink='1' minW='0px' spacing='0'>
+          <Image src={carrer.img} flex='none' objectFit='contain' w='2.2rem' h='2.2rem' marginRight='0.1rem'/>
+          <VStack alignItems='left' flexShrink='1' minW='0' spacing='0'>
             <Text fontWeight={600} fontSize='sm' isTruncated color='gray.800'>{carrer.universidad}</Text>
             <Text fontWeight={500} fontSize='sm' isTruncated color='gray.500'>{carrer.facultad}</Text>
           </VStack>

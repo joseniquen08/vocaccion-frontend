@@ -16,7 +16,7 @@ const Error404 = () => {
                             <h2 to="/" className="text-3xl font-bold md:text-5xl text-blue-id hover:text-blue-900">vocacción</h2>
                         </div>
                         <div className="mb-10 font-light text-gray-600 md:mb-10">
-                            <h1 className="mb-10 text-5xl font-black uppercase lg:text-7xl text-brown-id">NO ENCONTRADO</h1>
+                            <h1 className="mb-10 text-4xl font-black uppercase lg:text-7xl text-brown-id">NO ENCONTRADO</h1>
                             <p>La página que está buscando no está disponible.</p>
                             <p>Intente buscar de nuevo o utilice a continuación el botón <Link to="/" className="font-bold text-blue-id">Inicio</Link>.</p>
                         </div>

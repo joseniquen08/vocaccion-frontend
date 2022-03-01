@@ -1,6 +1,7 @@
 import { Avatar, Box, Drawer, DrawerContent, DrawerOverlay, Flex, HStack, Icon, IconButton, Input, InputGroup, InputLeftElement, useColorModeValue, useDisclosure } from "@chakra-ui/react";
 import { FaBell } from "react-icons/fa";
 import { FiMenu, FiSearch } from "react-icons/fi";
+import { Outlet } from "react-router-dom";
 import { Sidebar } from "./Sidebar";
 
 export const Dashboard = () => {
@@ -12,8 +13,9 @@ export const Dashboard = () => {
       as="section"
       minH="100vh"
       spacing='0'
+      w='full'
     >
-      <Sidebar flex='none' display={{ base: "none", md: "unset" }} />
+      <Sidebar flex='none' w='17rem' bg='cyan.50' minHeight='100vh' display={{ base: 'none', md: 'flex' }}/>
       <Drawer
         isOpen={sidebar.isOpen}
         onClose={sidebar.onClose}
@@ -21,10 +23,17 @@ export const Dashboard = () => {
       >
         <DrawerOverlay/>
         <DrawerContent>
-          <Sidebar w="full" borderRight="none" />
+          <Sidebar w="full" bg='white' minHeight='full' borderRight='none' display='flex' onClose={sidebar.onClose}/>
         </DrawerContent>
       </Drawer>
-      <Box transition=".3s ease" minHeight='100vh' w='full'>
+      <Box
+        transition=".3s ease"
+        minHeight='100vh'
+        maxHeight='100vh'
+        overflowY='auto'
+        w='full'
+        py={{ base: '0.25rem', md: '0.75rem' }}
+      >
         <Flex
           as="header"
           align="center"
@@ -32,15 +41,13 @@ export const Dashboard = () => {
           w="full"
           px="4"
           bg={useColorModeValue("white", "gray.800")}
-          borderBottomWidth="1px"
-          borderColor="blackAlpha.300"
           h="14"
         >
           <IconButton
-            aria-label="Menu"
             display={{ base: "inline-flex", md: "none" }}
             onClick={sidebar.onOpen}
-            color="cyan.700"
+            colorScheme='cyan'
+            variant='outline'
             icon={<FiMenu />}
             size="sm"
           />
@@ -60,10 +67,8 @@ export const Dashboard = () => {
             />
           </Flex>
         </Flex>
-
-        <Box as="main" p="4">
-          {/* Add content here, remove div below  */}
-          <Box borderWidth="4px" borderStyle="dashed" rounded="md" h="96" />
+        <Box py="4">
+          <Outlet/>
         </Box>
       </Box>
     </HStack>

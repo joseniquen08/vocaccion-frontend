@@ -241,7 +241,7 @@ export const SignUp = () => {
             paddingY='1.5rem'
             marginX='auto'
           >
-            <Link to="/">
+            <Link as={RouterLink} to="/">
               <Heading
                 as='h2'
                 fontSize={{ base: '3xl' }}

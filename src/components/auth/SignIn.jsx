@@ -1,10 +1,12 @@
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { Box, Button, Flex, FormControl, FormLabel, Heading, Input, InputGroup, InputLeftElement, InputRightAddon, Link, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Divider, Flex, FormControl, FormLabel, Heading, HStack, Input, InputGroup, InputLeftElement, InputRightAddon, Link, Text, VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import { FcGoogle } from 'react-icons/fc';
 import { HiOutlineLockClosed, HiOutlineMail } from 'react-icons/hi';
 import { MdVisibility, MdVisibilityOff } from 'react-icons/md';
 import { Link as RouterLink } from "react-router-dom";
+import Logo from "../Navbar/Logo";
 
 const MotionButton = motion(Button);
 
@@ -54,8 +56,8 @@ export const SignIn = () => {
                 as='p'
                 size='xl'
                 textAlign='center'
-                fontWeight={800}
-                color='cyan.600'
+                fontWeight={700}
+                color='cyan.500'
                 cursor='default'
               >
                 Iniciar Sesión
@@ -68,12 +70,30 @@ export const SignIn = () => {
               spacing='1.2rem'
               onSubmit={login}
             >
+              <VStack width='full'>
+                <Button
+                  type='button'
+                  leftIcon={<FcGoogle />}
+                  variant='outline'
+                  fontWeight={400}
+                  color='gray.500'
+                  colorScheme='gray'
+                  width='full'
+                >
+                  Ingresa con Google
+                </Button>
+              </VStack>
+              <HStack width='full' alignItems='center' justifyContent='center'>
+                <Divider bg='gray.700' opacity={1}/>
+                <Text color='gray.500' fontWeight={300}>o</Text>
+                <Divider bg='gray.700' opacity={1}/>
+              </HStack>
               <VStack
                 width='full'
                 spacing='0.6rem'
               >
                 <FormControl isRequired>
-                  <FormLabel color='gray.700' fontSize='0.825rem' htmlFor='email'>Correo Electrónico</FormLabel>
+                  <FormLabel color='gray.600' fontSize='0.875rem' htmlFor='email'>Correo Electrónico</FormLabel>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents='none'
@@ -83,17 +103,21 @@ export const SignIn = () => {
                     />
                     <Input
                       ref={emailRef}
+                      id='email'
                       type='email'
                       size='md'
                       _focus={{
                         boxShadow: 'none',
                       }}
+                      fontSize='0.95rem'
+                      fontWeight='500'
+                      color='gray.600'
                       autoFocus
                     />
                   </InputGroup>
                 </FormControl>
                 <FormControl isRequired>
-                  <FormLabel color='gray.700' fontSize='0.825rem' htmlFor='password'>Contraseña</FormLabel>
+                  <FormLabel color='gray.600' fontSize='0.875rem' htmlFor='password'>Contraseña</FormLabel>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents='none'
@@ -103,13 +127,17 @@ export const SignIn = () => {
                     />
                     <Input
                       ref={passwordRef}
+                      id='password'
                       type={showPassword ? 'text' : 'password'}
                       _focus={{
                         boxShadow: 'none',
                       }}
+                      fontSize='0.95rem'
+                      fontWeight='500'
+                      color='gray.600'
                     />
                     <InputRightAddon
-                    backgroundColor='white'
+                      backgroundColor='white'
                       paddingX={0}
                       paddingY={0}
                     >
@@ -127,15 +155,15 @@ export const SignIn = () => {
                 <MotionButton
                   type='submit'
                   variant='solid'
-                  bg='cyan.600'
+                  bg='cyan.500'
                   width='full'
                   whileTap={{ scale: 0.95 }}
                 >Ingresar</MotionButton>
                 <Text fontSize='0.85rem' textAlign='center' letterSpacing='wide'>
-                  ¿No tienes una cuenta? Créala <Link as={RouterLink} fontWeight={700} color='cyan.600' to='/register'>aquí</Link>
+                  ¿No tienes una cuenta? Créala <Link as={RouterLink} fontWeight={700} color='cyan.500' to='/register'>aquí</Link>
                 </Text>
               </VStack>
-              <Flex width='full'>
+              <Flex width='full' paddingY='1.5rem'>
                 <Button
                   as={RouterLink}
                   to='/'
@@ -162,16 +190,7 @@ export const SignIn = () => {
             paddingY='1.5rem'
             marginX='auto'
           >
-            <Link as={RouterLink} to="/">
-              <Heading
-                as='h2'
-                fontSize={{ base: '3xl' }}
-                fontWeight={700}
-                color='cyan.600'
-              >
-                vocacción
-              </Heading>
-            </Link>
+            <Logo/>
           </Box>
         </Box>
       </Flex>
@@ -182,7 +201,7 @@ export const SignIn = () => {
         paddingY='3rem'
         alignItems='center'
         justifyContent='center'
-        backgroundColor='cyan.600'
+        backgroundColor='cyan.500'
       >
         <Box
           width='full'

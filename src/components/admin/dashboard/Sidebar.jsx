@@ -1,8 +1,9 @@
-import { Avatar, Box, Collapse, Flex, Heading, HStack, Icon, Menu, MenuButton, MenuItem, MenuList, Text, useDisclosure, VStack } from '@chakra-ui/react';
+import { Avatar, Box, Collapse, Divider, Flex, HStack, Icon, Menu, MenuButton, MenuItem, MenuList, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import { HiCode } from 'react-icons/hi';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { RiBook2Line, RiBuildingLine, RiGroupLine, RiHomeSmile2Line, RiSettings5Line } from 'react-icons/ri';
-import { Link, Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import Logo from '../../Navbar/Logo';
 import { NavItem } from './NavItem';
 
 export const Sidebar = (props) => {
@@ -22,35 +23,22 @@ export const Sidebar = (props) => {
       overflowY='auto'
       flexDirection='column'
       justifyContent='space-between'
-      paddingX='1rem'
-      paddingY='1rem'
+      paddingX='1.5rem'
+      paddingY='1.5rem'
       {...props}
     >
       <Box w='full'>
-        <Flex py="2" align="center">
-          <Flex
-            justifyContent="start"
-            flex={{ lg: '1 1 0%' }}
-          >
-            <Link to="/">
-              <Heading
-                as='h2'
-                fontSize='1.75rem'
-                fontWeight={600}
-                color='cyan.500'
-              >
-                vocacción
-              </Heading>
-            </Link>
-          </Flex>
+        <Flex pt="1.5" pb='2.5' align="center">
+          <Logo/>
         </Flex>
+        <Divider/>
         <VStack
           as="nav"
           fontSize="sm"
           paddingY='1rem'
-          color="gray.600"
+          color="gray.900"
           w='full'
-          spacing='0.7rem'
+          spacing='0.5rem'
         >
           <NavItem
             as={RouterLink}
@@ -134,10 +122,9 @@ export const Sidebar = (props) => {
         <Menu>
           <MenuButton
             w='full'
-            bg='cyan.400'
+            bg='cyan.500'
             color='white'
             rounded='lg'
-            boxShadow='rgba(0, 0, 0, 0.2) 0px 5px 15px'
           >
             <HStack
               w='full'
@@ -145,7 +132,7 @@ export const Sidebar = (props) => {
               py='1rem'
               alignItems='center'
               justifyContent='start'
-              spacing='0.5rem'
+              spacing='0.75rem'
               overflow='hidden'
             >
               <Avatar

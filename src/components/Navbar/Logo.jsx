@@ -10,9 +10,9 @@ const Logo = () => {
         <Link to="/">
           <Heading
             as='h2'
-            fontSize={{ base: '3xl' }}
-            fontWeight={600}
-            color='cyan.600'
+            fontSize={{ base: '2rem' }}
+            fontWeight={700}
+            color='cyan.500'
           >
             vocacción
           </Heading>

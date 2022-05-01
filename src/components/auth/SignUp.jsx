@@ -1,10 +1,12 @@
-import { ArrowBackIcon } from "@chakra-ui/icons"
-import { Box, Button, Flex, FormControl, FormLabel, Heading, Input, InputGroup, InputLeftElement, InputRightAddon, Link, Text, VStack } from "@chakra-ui/react"
-import { motion } from "framer-motion"
-import { useRef, useState } from "react"
-import { HiOutlineIdentification, HiOutlineLockClosed, HiOutlineMail } from "react-icons/hi"
-import { MdVisibility, MdVisibilityOff } from "react-icons/md"
-import { Link as RouterLink } from "react-router-dom"
+import { ArrowBackIcon } from "@chakra-ui/icons";
+import { Box, Button, Divider, Flex, FormControl, FormLabel, Heading, HStack, Input, InputGroup, InputLeftElement, InputRightAddon, Link, Text, VStack } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { useRef, useState } from "react";
+import { FcGoogle } from 'react-icons/fc';
+import { HiOutlineIdentification, HiOutlineLockClosed, HiOutlineMail } from "react-icons/hi";
+import { MdVisibility, MdVisibilityOff } from "react-icons/md";
+import { Link as RouterLink } from "react-router-dom";
+import Logo from "../Navbar/Logo";
 
 const MotionButton = motion(Button);
 
@@ -59,8 +61,8 @@ export const SignUp = () => {
                 as='p'
                 size='xl'
                 textAlign='center'
-                fontWeight={800}
-                color='cyan.600'
+                fontWeight={700}
+                color='cyan.500'
               >
                 Registrarse
               </Heading>
@@ -72,12 +74,30 @@ export const SignUp = () => {
               spacing='0.4rem'
               onSubmit={login}
             >
+              <VStack width='full'>
+                <Button
+                  type='button'
+                  leftIcon={<FcGoogle />}
+                  variant='outline'
+                  fontWeight={400}
+                  color='gray.500'
+                  colorScheme='gray'
+                  width='full'
+                >
+                  Continúa con Google
+                </Button>
+              </VStack>
+              <HStack width='full' alignItems='center' justifyContent='center'>
+                <Divider bg='gray.700' opacity={1}/>
+                <Text color='gray.500' fontWeight={300}>o</Text>
+                <Divider bg='gray.700' opacity={1}/>
+              </HStack>
               <VStack
                 width='full'
                 spacing='0.5rem'
               >
                 <FormControl isRequired>
-                  <FormLabel color='gray.700' fontSize='0.825rem' htmlFor='first_name'>Nombres</FormLabel>
+                  <FormLabel color='gray.600' fontSize='0.875rem' htmlFor='first_name'>Nombres</FormLabel>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents='none'
@@ -87,9 +107,11 @@ export const SignUp = () => {
                     />
                     <Input
                       name="first_name"
+                      id="first_name"
                       type='text'
-                      fontSize='sm'
-                      letterSpacing='wide'
+                      fontSize='0.95rem'
+                      fontWeight='500'
+                      color='gray.600'
                       _focus={{
                         boxShadow: 'none',
                       }}
@@ -98,7 +120,7 @@ export const SignUp = () => {
                   </InputGroup>
                 </FormControl>
                 <FormControl isRequired>
-                  <FormLabel color='gray.700' fontSize='0.825rem' htmlFor='last_name'>Apellidos</FormLabel>
+                  <FormLabel color='gray.600' fontSize='0.875rem' htmlFor='last_name'>Apellidos</FormLabel>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents='none'
@@ -108,9 +130,11 @@ export const SignUp = () => {
                     />
                     <Input
                       name="last_name"
+                      id="last_name"
                       type='text'
-                      fontSize='sm'
-                      letterSpacing='wide'
+                      fontSize='0.95rem'
+                      fontWeight='500'
+                      color='gray.600'
                       _focus={{
                         boxShadow: 'none',
                       }}
@@ -118,7 +142,7 @@ export const SignUp = () => {
                   </InputGroup>
                 </FormControl>
                 <FormControl isRequired>
-                  <FormLabel color='gray.700' fontSize='0.825rem' htmlFor='email'>Correo Electrónico</FormLabel>
+                  <FormLabel color='gray.600' fontSize='0.875rem' htmlFor='email'>Correo Electrónico</FormLabel>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents='none'
@@ -128,9 +152,11 @@ export const SignUp = () => {
                     />
                     <Input
                       name="email"
+                      id="email"
                       type='email'
-                      fontSize='sm'
-                      letterSpacing='wide'
+                      fontSize='0.95rem'
+                      fontWeight='500'
+                      color='gray.600'
                       _focus={{
                         boxShadow: 'none',
                       }}
@@ -138,7 +164,7 @@ export const SignUp = () => {
                   </InputGroup>
                 </FormControl>
                 <FormControl isRequired>
-                  <FormLabel color='gray.700' fontSize='0.825rem' htmlFor='password'>Contraseña</FormLabel>
+                  <FormLabel color='gray.600' fontSize='0.875rem' htmlFor='password'>Contraseña</FormLabel>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents='none'
@@ -148,9 +174,11 @@ export const SignUp = () => {
                     />
                     <Input
                       name="password"
+                      id="password"
                       type={showPassword ? 'text' : 'password'}
-                      fontSize='sm'
-                      letterSpacing='wide'
+                      fontSize='0.95rem'
+                      fontWeight='500'
+                      color='gray.600'
                       _focus={{
                         boxShadow: 'none',
                       }}
@@ -170,7 +198,7 @@ export const SignUp = () => {
                   </InputGroup>
                 </FormControl>
                 <FormControl isRequired>
-                  <FormLabel color='gray.700' fontSize='0.825rem' htmlFor='password_confirmation'>Confirmar contraseña</FormLabel>
+                  <FormLabel color='gray.600' fontSize='0.875rem' htmlFor='password_confirmation'>Confirmar contraseña</FormLabel>
                   <InputGroup>
                     <InputLeftElement
                       pointerEvents='none'
@@ -180,9 +208,11 @@ export const SignUp = () => {
                     />
                     <Input
                       name="password_confirmation"
+                      id="password_confirmation"
                       type={showPasswordConfirmation ? 'text' : 'password'}
-                      fontSize='sm'
-                      letterSpacing='wide'
+                      fontSize='0.95rem'
+                      fontWeight='500'
+                      color='gray.600'
                       _focus={{
                         boxShadow: 'none',
                       }}
@@ -206,15 +236,15 @@ export const SignUp = () => {
                 <MotionButton
                   type='submit'
                   variant='solid'
-                  bg='cyan.600'
+                  bg='cyan.500'
                   width='full'
                   whileTap={{ scale: 0.98 }}
                 >Registrarme</MotionButton>
                 <Text fontSize='0.85rem' textAlign='center' letterSpacing='wide'>
-                  ¿Ya tienes una cuenta? Inicia sesión <Link as={RouterLink} fontWeight={700} color='cyan.600' to='/login'>aquí</Link>
+                  ¿Ya tienes una cuenta? Inicia sesión <Link as={RouterLink} fontWeight={700} color='cyan.500' to='/login'>aquí</Link>
                 </Text>
               </VStack>
-              <Flex width='full'>
+              <Flex width='full' paddingY='1.5rem'>
                 <Button
                   as={RouterLink}
                   to='/'
@@ -241,16 +271,7 @@ export const SignUp = () => {
             paddingY='1.5rem'
             marginX='auto'
           >
-            <Link as={RouterLink} to="/">
-              <Heading
-                as='h2'
-                fontSize={{ base: '3xl' }}
-                fontWeight={700}
-                color='cyan.600'
-              >
-                vocacción
-              </Heading>
-            </Link>
+            <Logo/>
           </Box>
         </Box>
       </Flex>
@@ -261,7 +282,7 @@ export const SignUp = () => {
         paddingY='3rem'
         alignItems='center'
         justifyContent='center'
-        backgroundColor='cyan.600'
+        backgroundColor='cyan.500'
       >
         <Box
           width='full'

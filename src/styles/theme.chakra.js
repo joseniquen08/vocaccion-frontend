@@ -17,6 +17,15 @@ export const theme = extendTheme({
           },
         },
       },
+      Checkbox: {
+        baseStyle: {
+          control: {
+            _focus: {
+              boxShadow: 'none',
+            },
+          },
+        },
+      },
       Link: {
         baseStyle: {
           _focus: {

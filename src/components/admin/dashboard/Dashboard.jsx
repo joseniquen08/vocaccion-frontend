@@ -15,7 +15,15 @@ export const Dashboard = () => {
       spacing='0'
       w='full'
     >
-      <Sidebar flex='none' w='17rem' bg='cyan.50' minHeight='100vh' display={{ base: 'none', md: 'flex' }}/>
+      <Sidebar
+        flex='none'
+        w='20rem'
+        borderRight='1px solid'
+        borderColor='gray.200'
+        // bg='cyan.50'
+        minHeight='100vh'
+        display={{ base: 'none', md: 'flex' }}
+      />
       <Drawer
         isOpen={sidebar.isOpen}
         onClose={sidebar.onClose}
@@ -67,7 +75,7 @@ export const Dashboard = () => {
             />
           </Flex>
         </Flex>
-        <Box py="4">
+        <Box p="4">
           <Outlet/>
         </Box>
       </Box>

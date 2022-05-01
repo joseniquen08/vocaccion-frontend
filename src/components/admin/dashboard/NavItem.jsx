@@ -18,8 +18,7 @@ export const NavItem = ({ icon, children, activeItem, ...rest}) => {
       fontWeight='500'
       fontSize='0.87rem'
       transition='.15s ease'
-      bg={activeItem ? 'cyan.400' : 'transparent'}
-      boxShadow={activeItem ? 'rgba(0, 0, 0, 0.2) 0px 5px 15px' : ''}
+      bg={activeItem ? 'cyan.500' : 'transparent'}
       {...rest}
     >
       {icon && (

@@ -31,7 +31,7 @@ export const MenuMdButton = () => {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton _focus={{ boxShadow: 'none' }}/>
-            <DrawerBody marginTop={12} padding={0}>
+            <DrawerBody marginTop={12} padding={0} color='gray.600'>
               <Accordion allowToggle>
                 <AccordionItem>
                   <h2>
@@ -100,7 +100,7 @@ export const MenuMdButton = () => {
                     <AccordionButton
                       as={RouterLink} to="help"
                     >
-                      <Box flex='1' textAlign='left'>
+                      <Box flex='1' textAlign='left' fontWeight={500}>
                         Ayuda
                       </Box>
                     </AccordionButton>
